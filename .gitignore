@@ -1,0 +1,17 @@
+# Global rules
+.DS_Store
+Thumbs.db
+
+# Server-specific (Node.js)
+server/node_modules/
+# server/.env
+server/logs/
+server/*.log
+server/dist/
+server/build/
+
+# Client-specific (React)
+client/node_modules/
+# client/.env
+client/build/
+client/.cache/
