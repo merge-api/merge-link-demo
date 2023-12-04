@@ -11,9 +11,18 @@ import useFetchLinkToken from "../hooks/useFetchLinkToken";
  */
 const MergeLinkButton = () => {  
   // Callback for handling success event
-  const onSuccess = useCallback((publicToken) => {
-    // TODO: Implement functionality to send the publicToken to the server
+  const onSuccess = useCallback(async (publicToken) => {
     // This is typically Step 3 in the Merge Link integration process
+    try {
+      axios.post(
+        `${process.env.REACT_APP_SERVER_URL}/account-token`, {
+          publicToken
+        }
+      );
+    } catch(error) {
+      console.log(error)
+    }
+   
   }, []);
 
   // Custom hook to fetch the link token

@@ -30,7 +30,10 @@ router.post("/", async (req, res, next) => {
       endUserEmailAddress: user.email,
       endUserOrganizationName: user.organization,
       endUserOriginId: user.id,
-      categories: [Merge.hris.CategoriesEnum.Hris],
+      categories: [
+        Merge.hris.CategoriesEnum.Hris,
+        Merge.hris.CategoriesEnum.Ticketing,
+      ],
       linkExpiryMins: 30, // 30 minutes is both the default and minimum value
     });
 
